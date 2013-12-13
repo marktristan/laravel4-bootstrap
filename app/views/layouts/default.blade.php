@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<!-- Basic Page Needs
-		================================================== -->
+		{{-- Basic page needs --}}
 		<meta charset="utf-8" />
 		<title>
 			@section('title')
@@ -13,31 +12,37 @@
 		<meta name="author" content="Jon Doe" />
 		<meta name="description" content="Lorem ipsum dolor sit amet, nihil fabulas et sea, nam posse menandri scripserit no, mei." />
 
-		<!-- Mobile Specific Metas
-		================================================== -->
+		{{-- Mobile specific metas --}}
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<!-- CSS
-		================================================== -->
+		{{-- CSS --}}
 		<link href="{{{ asset('assets/css/bootstrap.css') }}}" rel="stylesheet">
 
 		<style>
 			@section('styles')
 				body {
-					padding-top: 20px;
+					padding-top: 50px;
 				}
 			@show
 		</style>
 
-		<link href="{{{ asset('assets/css/bootstrap-responsive.css') }}}" rel="stylesheet">
-
-		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+		{{-- HTML5 shim, for IE6-8 support of HTML5 elements --}}
 		<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 	</head>
 
 	<body>
-		@yield('content')
+		{{-- Header Nav --}}
+		@include('layouts.headernav')
+
+		{{-- Content --}}
+		<div class="container">
+			@yield('content')
+		</div>
+
+		{{-- Javascripts --}}
+		<script src="{{{ asset('assets/js/jquery-1.10.2.js') }}}"></script>
+		<script src="{{{ asset('assets/js/bootstrap.min.js') }}}"></script>
 	</body>
 </html>
