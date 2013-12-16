@@ -10,6 +10,10 @@
       <a class="navbar-brand" href="#">Project Name</a>
     </div>
     <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Active Link</a></li>
+        <li><a href="#">Another Link</a></li>
+      </ul>
       <form class="navbar-form navbar-right" role="form">
         <div class="form-group">
           <input type="text" placeholder="Email" class="form-control">
