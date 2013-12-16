@@ -9,7 +9,7 @@
 			@show
 		</title>
 		<meta name="keywords" content="your, awesome, keywords, here" />
-		<meta name="author" content="Jon Doe" />
+		<meta name="author" content="Your Name" />
 		<meta name="description" content="Lorem ipsum dolor sit amet, nihil fabulas et sea, nam posse menandri scripserit no, mei." />
 
 		{{-- Mobile specific metas --}}
