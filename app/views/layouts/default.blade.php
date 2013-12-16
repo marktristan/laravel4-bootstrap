@@ -5,7 +5,7 @@
 		<meta charset="utf-8" />
 		<title>
 			@section('title')
-				Laravel 4 with Twitter Bootstrap
+				Laravel 4 with Bootstrap
 			@show
 		</title>
 		<meta name="keywords" content="your, awesome, keywords, here" />
