@@ -1,0 +1,57 @@
+#!/bin/sh
+
+set -e
+
+echo ""
+echo "*** App Deploy Tool ***"
+echo ""
+
+# Check if PostgreSQL (or at least psql) is present
+if test ! $(which psql);
+then
+  echo "You need to install PostgreSQL."
+  exit
+else
+  echo "PostgreSQL found."
+fi
+
+# Drop PostgreSQL database 'myproject' if it exists
+dropdb --if-exists myproject
+
+# Drop PostgreSQL user 'myuser' if it exists
+dropuser --if-exists myuser
+
+# Create PostgreSQL user 'myuser'
+createuser myuser
+echo "PostgreSQL user 'myuser' created."
+
+# Create PostgreSQL database 'datastore'
+createdb -O myuser myproject
+echo "PostgreSQL database 'myproject' created."
+
+# Check if composer is present
+if test ! $(which composer);
+then
+  echo "You need to install Composer:"
+  echo "curl -sS https://getcomposer.org/installer | php"
+  exit
+else
+  echo "Composer found."
+fi
+
+echo "Installing dependencies..."
+#composer --quiet install --no-scripts
+#composer --quiet update
+
+echo "Running migrations..."
+php artisan migrate
+
+echo "Seeding the database..."
+php artisan db:seed
+
+echo "Setting permissions for app/storage..."
+#chmod -R 777 app/storage
+
+echo ""
+echo "Process complete, app is ready for use."
+echo ""

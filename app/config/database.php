@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'mysql',
+	'default' => 'mypgsql',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -68,6 +68,17 @@ return array(
 			'host'     => 'localhost',
 			'database' => 'database',
 			'username' => 'root',
+			'password' => '',
+			'charset'  => 'utf8',
+			'prefix'   => '',
+			'schema'   => 'public',
+		),
+
+		'mypgsql' => array(
+			'driver'   => 'pgsql',
+			'host'     => 'localhost',
+			'database' => 'myproject',
+			'username' => 'postgres',
 			'password' => '',
 			'charset'  => 'utf8',
 			'prefix'   => '',
