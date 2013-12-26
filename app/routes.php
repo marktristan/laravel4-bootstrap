@@ -21,4 +21,4 @@ Route::get('dashboard', function()
   return View::make('hello');
 });
 
-Route::controller('login', 'UserController');
+Route::controller('user', 'UserController');

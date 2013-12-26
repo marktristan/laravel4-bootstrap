@@ -14,7 +14,7 @@
         <li class="active"><a href="#">Active Link</a></li>
         <li><a href="#">Another Link</a></li>
       </ul>
-      <form class="navbar-form navbar-right" role="form" method="post" action="{{{ url('login/attempt') }}}">
+      <form class="navbar-form navbar-right" role="form" method="post" action="{{{ url('user/login') }}}">
         <div class="form-group">
           <input type="text" placeholder="Username" class="form-control" name="username">
         </div>

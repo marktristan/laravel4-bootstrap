@@ -2,7 +2,7 @@
 
 class UserController extends BaseController {
 
-  public function postAttempt()
+  public function postLogin()
   {
     if (Auth::attempt(array('username' => Input::get('username'), 'password' => Input::get('password'))))
     {
