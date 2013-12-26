@@ -14,12 +14,12 @@
         <li class="active"><a href="#">Active Link</a></li>
         <li><a href="#">Another Link</a></li>
       </ul>
-      <form class="navbar-form navbar-right" role="form">
+      <form class="navbar-form navbar-right" role="form" method="post" action="{{{ url('login/attempt') }}}">
         <div class="form-group">
-          <input type="text" placeholder="Email" class="form-control">
+          <input type="text" placeholder="Username" class="form-control" name="username">
         </div>
         <div class="form-group">
-          <input type="password" placeholder="Password" class="form-control">
+          <input type="password" placeholder="Password" class="form-control" name="password">
         </div>
         <button type="submit" class="btn btn-success">Sign in</button>
       </form>
