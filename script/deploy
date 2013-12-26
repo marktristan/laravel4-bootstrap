@@ -7,8 +7,7 @@ echo "*** App Deploy Tool ***"
 echo ""
 
 # Check if PostgreSQL (or at least psql) is present
-if test ! $(which psql);
-then
+if test ! $(which psql); then
   echo "You need to install PostgreSQL."
   exit
 else
@@ -30,8 +29,7 @@ createdb -O myuser myproject
 echo "PostgreSQL database 'myproject' created."
 
 # Check if composer is present
-if test ! $(which composer);
-then
+if test ! $(which composer); then
   echo "You need to install Composer:"
   echo "curl -sS https://getcomposer.org/installer | php"
   exit
@@ -51,6 +49,14 @@ php artisan db:seed
 
 echo "Setting permissions for app/storage..."
 #chmod -R 777 app/storage
+
+echo "Creating symbolic link for public directory..."
+if [ -L "/var/www/my.laravel" ]; then
+  unlink /var/www/my.laravel
+fi
+ln -s /var/www/l4/public /var/www/my.laravel
+
+sleep 2
 
 echo ""
 echo "Process complete, app is ready for use."
