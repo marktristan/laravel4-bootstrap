@@ -1,5 +1,9 @@
 @extends('layouts.default')
 
+@section('messages')
+	asdasdas
+@stop
+
 @section('content')
 	<div class="jumbotron">
 	  <div class="container">
@@ -27,5 +31,5 @@
 	    <p><a class="btn btn-default" href="#" role="button">View details <span class="glyphicon glyphicon-chevron-right"></span></a></p>
 	  </div>
 	</div>
-	@include('layouts.footer')
+	@include('includes.footer')
 @stop

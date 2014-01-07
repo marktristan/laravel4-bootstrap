@@ -21,7 +21,7 @@
 		<style>
 			@section('styles')
 				body {
-					padding-top: 50px;
+					padding-top: 70px;
 				}
 			@show
 		</style>
@@ -34,10 +34,11 @@
 
 	<body>
 		{{-- Header Nav --}}
-		@include('layouts.headernav')
+		@include('includes.headernav')
 
 		{{-- Content --}}
 		<div class="container">
+			@include('includes.notifications')
 			@yield('content')
 		</div>
 
