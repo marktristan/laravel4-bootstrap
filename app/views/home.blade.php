@@ -1,9 +1,5 @@
 @extends('layouts.default')
 
-@section('messages')
-	asdasdas
-@stop
-
 @section('content')
 	<div class="jumbotron">
 	  <div class="container">
