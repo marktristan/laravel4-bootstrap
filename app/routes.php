@@ -22,3 +22,5 @@ Route::get('dashboard', function()
 });
 
 Route::controller('account', 'AccountController');
+	return View::make('hello');
+});
