@@ -14,9 +14,15 @@ class AccountController extends BaseController {
       {
         return Redirect::to('/')->with('warning', 'Please provide username and password');
       }
-      
+
       return Redirect::to('/')->with('error', 'Invalid username or password');
     }
+  }
+
+  public function getLogout()
+  {
+    Auth::logout();
+    return Redirect::to('/')->with('success', 'You have successfully logged out');
   }
 
 }

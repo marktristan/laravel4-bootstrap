@@ -13,14 +13,18 @@
 
 Route::get('/', function()
 {
-	return View::make('home');
+  return View::make('home');
 });
 
-Route::get('dashboard', function()
+// Route::get('dashboard', function()
+// {
+  // return View::make('hello');
+// });
+
+Route::get('dashboard', array('before' => 'auth', function()
 {
+  // Only authenticated users may enter...
   return View::make('hello');
-});
+}));
 
 Route::controller('account', 'AccountController');
-	return View::make('hello');
-});
